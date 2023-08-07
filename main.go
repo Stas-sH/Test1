@@ -26,7 +26,7 @@ func calculateFactorial(n int, ch chan<- int) {
 	ch <- result
 }
 
-func calculateHandler(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+func calculateHandler(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	var inputData InputData
 	decoder := json.NewDecoder(r.Body)
 	if err := decoder.Decode(&inputData); err != nil {
